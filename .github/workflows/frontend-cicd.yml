@@ -1,4 +1,4 @@
-name: Upload Frontend CI/CD
+name: Frontend CI/CD
 
 on:
   push:
@@ -6,16 +6,27 @@ on:
       - main
 
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@master
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --follow-symlinks --delete
-        env:
-          SOURCE_DIR: cloud
-          AWS_REGION: "eu-north-1"
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+
+      - name: Configure AWS
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set region eu-north-1
+
+      - name: Upload to S3
+        run: |
+          aws s3 sync ./cloud s3://${{ secrets.S3_BUCKET_NAME }}/
