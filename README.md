@@ -3,4 +3,15 @@
 This my own aws cloud resume challenge attempt. In case you are unfamiliar with this challenge,
 here is a link to the website: [aws-cloud-resume-challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/).
 
-In short, this challenge incorporates many different aws services, devOps practices as well as some html, css and js.
+In short, this challenge incorporates many different aws services, devOps practices, terraform, as well as some html, css and js.
+
+#### This project uses:
+1. S3
+2. Cloudfront
+3. Route 53
+4. ACM (Amazon Certificate Manager)
+5. DynamoDB
+6. Lambda
+7. API Gateway
+
+
