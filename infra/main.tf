@@ -57,7 +57,7 @@ resource "aws_iam_role_policy_attachment" "iam_role_policy_attachement" {
   policy_arn = aws_iam_policy.dynamo_access.arn
 }
 
-/*resource "aws_lambda_function_url" "url" {
+resource "aws_lambda_function_url" "url" {
   authorization_type = "NONE"
   function_name      = aws_lambda_function.count_visitors.function_name
 
@@ -69,7 +69,7 @@ resource "aws_iam_role_policy_attachment" "iam_role_policy_attachement" {
     expose_headers    = ["date", "keep-alive"]
     max_age           = 86400
   }
-}*/
+}
 
 data "archive_file" "lamda_cloud_resume_func" {
   type        = "zip"
