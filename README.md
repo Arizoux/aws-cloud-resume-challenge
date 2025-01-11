@@ -14,4 +14,15 @@ In short, this challenge incorporates many different aws services, devOps practi
 6. Lambda
 7. API Gateway
 
+#### As well as:
+1. HTML/CSS/Javascript
+2. terraform
+3. python
+4. git
+5. Github actions
+
+
+
+![Architecture Diagram:](./cloudResumeChallengeArchitectureDiagram.png)
+
 
