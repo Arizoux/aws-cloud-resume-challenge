@@ -1,7 +1,7 @@
 # AWS Cloud Resume Challenge
 
 This my own aws cloud resume challenge attempt. In case you are unfamiliar with this challenge,
-here is a link to the website: [aws-cloud-resume-challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/).
+here is a link to the website: [aws-cloud-resume-challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/). <br />
 The website I created is available here: [https://2.cloudresumechallengebyfelix.click/](https://2.cloudresumechallengebyfelix.click/).
 
 In short, this challenge incorporates many different aws services, devOps practices, terraform, as well as some html, css and js.
